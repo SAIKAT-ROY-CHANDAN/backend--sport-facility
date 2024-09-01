@@ -9,10 +9,9 @@
 
 //   // Create the payload object as needed
 //   const payLoad = { date };
-  
 
 //   const checkAvailabilTime = await checkAvailabiitySercices.checkAvailabilTimeIntoDB(payLoad);
-    
+
 //     sendResponse(res, {
 //         statusCode: httpStatus.OK,
 //         success: true,

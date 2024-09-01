@@ -1,13 +1,12 @@
-import dotenv from 'dotenv'
-import path from 'path'
+import dotenv from 'dotenv';
+import path from 'path';
 
-dotenv.config({ path: path.join(process.cwd(), '.env') })
-
+dotenv.config({ path: path.join(process.cwd(), '.env') });
 
 export default {
   NODE_ENV: process.env.NODE_ENV,
   port: process.env.PORT,
   database_url: process.env.DATABASE_URL,
-  default_pass:process.env.DEFAULT_PASS,
-  JWT_ACCESS_SECRATE:process.env.JWT_ACCESS_SECRATE
-}
+  default_pass: process.env.DEFAULT_PASS,
+  JWT_ACCESS_SECRATE: process.env.JWT_ACCESS_SECRATE,
+};

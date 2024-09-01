@@ -9,8 +9,8 @@ const creatFacilityIntoDB = async (payLoad: TFacility) => {
     description: result.description,
     pricePerHour: result.pricePerHour,
     location: result.location,
-    isDeleted: result.isDeleted
-  }
+    isDeleted: result.isDeleted,
+  };
   return resData;
 };
 const updateFacilityIntoDB = async (
@@ -18,7 +18,6 @@ const updateFacilityIntoDB = async (
   payLoad: Partial<TFacility>,
 ) => {
   const { ...updateData } = payLoad;
-  
 
   const result = await Facility.findOneAndUpdate({ _id: id }, updateData, {
     new: true,
@@ -29,22 +28,22 @@ const updateFacilityIntoDB = async (
     _id: result._id,
     name: result.name,
     description: result.description,
-    pricePerHour:result.pricePerHour,
+    pricePerHour: result.pricePerHour,
     location: result.location,
-    isDeleted: result.isDeleted
-  }
+    isDeleted: result.isDeleted,
+  };
   return respData;
 };
-const deleteFacilityIntoDB = async (
-  id: string,
-) => {
-  
-
-  const result = await Facility.findOneAndUpdate({ _id: id },{isDeleted:true},{
-    new: true,
-    runValidators: true,
-    upsert: true,
-  });
+const deleteFacilityIntoDB = async (id: string) => {
+  const result = await Facility.findOneAndUpdate(
+    { _id: id },
+    { isDeleted: true },
+    {
+      new: true,
+      runValidators: true,
+      upsert: true,
+    },
+  );
   return result;
 };
 
@@ -56,5 +55,5 @@ export const FacalityServices = {
   creatFacilityIntoDB,
   updateFacilityIntoDB,
   deleteFacilityIntoDB,
-  getAllFacilityIntoDB
+  getAllFacilityIntoDB,
 };

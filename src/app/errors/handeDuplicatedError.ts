@@ -1,25 +1,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { TErrorSource, TGenericErrorResponse } from "../interface/error";
+import { TErrorSource, TGenericErrorResponse } from '../interface/error';
 
-const handeDuplicatedError = (err:any) : TGenericErrorResponse =>{
- // Extract value within double quotes using regex
- const match = err.message.match(/"([^"]*)"/);
+const handeDuplicatedError = (err: any): TGenericErrorResponse => {
+  // Extract value within double quotes using regex
+  const match = err.message.match(/"([^"]*)"/);
 
- // The extracted value will be in the first capturing group
- const extractedMessage = match && match[1];
+  // The extracted value will be in the first capturing group
+  const extractedMessage = match && match[1];
 
- const errorSources: TErrorSource = [
-   {
-     path: '',
-     message: `${extractedMessage} is already exists`,
-   },
- ];
+  const errorSources: TErrorSource = [
+    {
+      path: '',
+      message: `${extractedMessage} is already exists`,
+    },
+  ];
 
-    const statusCode = 400
-    return{
-        statusCode,
-        message : `duplicate key error ${extractedMessage} is already exists`,
-        errorSources 
-      }
-}
-export default handeDuplicatedError
+  const statusCode = 400;
+  return {
+    statusCode,
+    message: `duplicate key error ${extractedMessage} is already exists`,
+    errorSources,
+  };
+};
+export default handeDuplicatedError;

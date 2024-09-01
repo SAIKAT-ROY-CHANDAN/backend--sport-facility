@@ -41,8 +41,26 @@ const creatBookings = catchAsync(async (req, res) => {
     req.body,
     userdata,
   );
-  const {_id,facility,date,startTime,endTime,user,payableAmount,isBooked} = result
-  const sendData = {_id,facility,date,startTime,endTime,user,payableAmount,isBooked}
+  const {
+    _id,
+    facility,
+    date,
+    startTime,
+    endTime,
+    user,
+    payableAmount,
+    isBooked,
+  } = result;
+  const sendData = {
+    _id,
+    facility,
+    date,
+    startTime,
+    endTime,
+    user,
+    payableAmount,
+    isBooked,
+  };
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -52,10 +70,28 @@ const creatBookings = catchAsync(async (req, res) => {
 });
 
 const cancelBooking = catchAsync(async (req, res) => {
-  const {id} = req.params
+  const { id } = req.params;
   const result = await checkAvailabiitySercices.cancelBookingIntoDB(id);
-const {_id,facility,date,startTime,endTime,user,payableAmount,isBooked} = result
-  const sendData = {_id,facility,date,startTime,endTime,user,payableAmount,isBooked}
+  const {
+    _id,
+    facility,
+    date,
+    startTime,
+    endTime,
+    user,
+    payableAmount,
+    isBooked,
+  } = result;
+  const sendData = {
+    _id,
+    facility,
+    date,
+    startTime,
+    endTime,
+    user,
+    payableAmount,
+    isBooked,
+  };
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -68,5 +104,5 @@ export const checkAvailabilityControler = {
   creatBookings,
   getAllBookings,
   viewBookingsByUser,
-  cancelBooking
+  cancelBooking,
 };

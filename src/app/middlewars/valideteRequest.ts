@@ -10,6 +10,6 @@ const valideteRequest = (schema: AnyZodObject) => {
       body: req.body,
     });
     next();
-  })
+  });
 };
 export default valideteRequest;

@@ -1,17 +1,20 @@
-import { Response } from "express";
+import { Response } from 'express';
 
-const sendResponse = <T>(res:Response,data: {
-    statusCode: number,
-    success:boolean,
-    message? : string,
-    data:T
-})=>{
-res.status(data?.statusCode).json({
+const sendResponse = <T>(
+  res: Response,
+  data: {
+    statusCode: number;
+    success: boolean;
+    message?: string;
+    data: T;
+  },
+) => {
+  res.status(data?.statusCode).json({
     success: data.success,
-    statusCode:data.statusCode,
+    statusCode: data.statusCode,
     message: data.message,
-    data: data.data
-})
-}
+    data: data.data,
+  });
+};
 
-export default sendResponse
+export default sendResponse;

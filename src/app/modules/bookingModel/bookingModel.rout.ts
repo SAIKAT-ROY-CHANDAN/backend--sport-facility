@@ -16,11 +16,14 @@ rout.post(
 
 rout.get('/bookings', auth('admin'), checkAvailabilityControler.getAllBookings);
 rout.get(
-    '/bookings/user',
-    auth('user'),
-    checkAvailabilityControler.viewBookingsByUser,
-  );
-  rout.delete('/bookings/:id', auth('user'), checkAvailabilityControler.cancelBooking);
-
+  '/bookings/user',
+  auth('user'),
+  checkAvailabilityControler.viewBookingsByUser,
+);
+rout.delete(
+  '/bookings/:id',
+  auth('user'),
+  checkAvailabilityControler.cancelBooking,
+);
 
 export const ChackAvailityRoutes = rout;

@@ -1,1 +1,1 @@
-export const isconfirmed = ['confirmed', 'unconfirmed', 'canceled']
+export const isconfirmed = ['confirmed', 'unconfirmed', 'canceled'];

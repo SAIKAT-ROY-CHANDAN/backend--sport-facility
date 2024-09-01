@@ -1,3 +1,3 @@
-import { TRole } from "./user.interface";
+import { TRole } from './user.interface';
 
-export const Role: TRole[] = ["user","admin"];
+export const Role: TRole[] = ['user', 'admin'];

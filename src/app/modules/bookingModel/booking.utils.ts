@@ -23,13 +23,12 @@ export const checkAvailability = async (
   startTime: HHMM,
   endTime: HHMM,
 ) => {
-
   const bookings = await Booking.find({ date, isBooked: 'confirmed' });
 
   const isSlotAvailable = (
     startTime: string,
     endTime: string,
-    bookings:TBooking[],
+    bookings: TBooking[],
   ) => {
     for (const booking of bookings) {
       if (
@@ -46,7 +45,7 @@ export const checkAvailability = async (
 
   // Check if the requested slot is available
   const slotAvailable = isSlotAvailable(startTime, endTime, bookings);
-  return slotAvailable
+  return slotAvailable;
 };
 
 // Function to find available slots
@@ -114,7 +113,7 @@ export const findAvailableSlots = async (
               (parseInt(booking.endTime) + 1).toString().padStart(2, '0') +
               ':00',
           };
-          
+
           availableSlots.push(oddSlot);
         }
 
